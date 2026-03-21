@@ -13,7 +13,7 @@
 ```bash
 cd sft_stage
 sh run_sft.sh
-
+```
 
 ##运行 RL
 执行以下命令启动 RL 训练：
@@ -21,6 +21,6 @@ sh run_sft.sh
 ```bash
 cd verl/recipe/dapo/
 sh run_dapo_recipe.sh
-
+```
 
 注意：请根据实际需求修改脚本内的数据路径、模型路径及超参数。
