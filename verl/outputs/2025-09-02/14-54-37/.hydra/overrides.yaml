@@ -1,0 +1,15 @@
+- data.train_files=/root/verl_data/dapo-math-17k.parquet
+- data.val_files=/root/verl_data/aime-2024.parquet
+- data.use_shm=True
+- data.shuffle=True
+- data.validation_shuffle=True
+- data.prompt_key=prompt
+- data.truncation=left
+- data.max_prompt_length=2048
+- data.max_response_length=4096
+- data.train_batch_size=64
+- actor_rollout_ref.rollout.n=5
+- algorithm.adv_estimator=grpo
+- algorithm.use_kl_in_reward=False
+- algorithm.kl_ctrl.kl_coef=0.0
+- actor_rollout_ref.actor.strategy=fsdp2

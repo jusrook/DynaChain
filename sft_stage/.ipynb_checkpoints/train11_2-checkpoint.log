@@ -1,0 +1,9 @@
+run_unsloth_sft.sh: 35: cannot create /root/autodl-fs/experiments_results/11_4_llama3_1_8b_sft_lora/train_config.txt: Directory nonexistent
+==========================================
+cat: /root/autodl-fs/experiments_results/11_4_llama3_1_8b_sft_lora/train_config.txt: No such file or directory
+==========================================
+开始训练...
+/root/augumented_lunwen/sft_stage/unsloth_sft_train.py:3: UserWarning: WARNING: Unsloth should be imported before transformers, peft to ensure all optimizations are applied. Your code may run slower or encounter memory issues without these optimizations.
+
+Please restructure your imports with 'import unsloth' at the top of your file.
+  from unsloth.chat_templates import train_on_responses_only

@@ -1,0 +1,89 @@
+2025-08-28 16:40:38,529 INFO    MainThread:9385 [wandb_setup.py:_flush():80] Current SDK version is 0.21.1
+2025-08-28 16:40:38,529 INFO    MainThread:9385 [wandb_setup.py:_flush():80] Configure stats pid to 9385
+2025-08-28 16:40:38,529 INFO    MainThread:9385 [wandb_setup.py:_flush():80] Loading settings from /root/.config/wandb/settings
+2025-08-28 16:40:38,529 INFO    MainThread:9385 [wandb_setup.py:_flush():80] Loading settings from /root/verl/wandb/settings
+2025-08-28 16:40:38,529 INFO    MainThread:9385 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-08-28 16:40:38,529 INFO    MainThread:9385 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /root/verl/wandb/run-20250828_164038-wxj1bb1t/logs/debug.log
+2025-08-28 16:40:38,529 INFO    MainThread:9385 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /root/verl/wandb/run-20250828_164038-wxj1bb1t/logs/debug-internal.log
+2025-08-28 16:40:38,530 INFO    MainThread:9385 [wandb_init.py:init():830] calling init triggers
+2025-08-28 16:40:38,530 INFO    MainThread:9385 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'actor_rollout_ref': {'actor': {'_target_': 'verl.workers.config.FSDPActorConfig', 'strategy': 'fsdp2', 'ppo_mini_batch_size': 32, 'ppo_micro_batch_size': None, 'ppo_micro_batch_size_per_gpu': None, 'use_dynamic_bsz': True, 'ppo_max_token_len_per_gpu': 6144, 'clip_ratio': 0.2, 'clip_ratio_low': 0.2, 'clip_ratio_high': 0.28, 'policy_loss': {'_target_': 'verl.workers.config.PolicyLossConfig', 'loss_mode': 'vanilla', 'clip_cov_ratio': 0.0002, 'clip_cov_lb': 1.0, 'clip_cov_ub': 5.0, 'kl_cov_ratio': 0.0002, 'ppo_kl_coef': 0.1}, 'clip_ratio_c': 10.0, 'loss_agg_mode': 'token-mean', 'entropy_coeff': 0, 'use_kl_loss': False, 'use_torch_compile': True, 'kl_loss_coef': 0.0, 'kl_loss_type': 'low_var_kl', 'ppo_epochs': 1, 'shuffle': False, 'checkpoint': {'_target_': 'verl.trainer.config.CheckpointConfig', 'save_contents': ['model', 'optimizer', 'extra'], 'load_contents': ['model', 'optimizer', 'extra'], 'async_save': False}, 'optim': {'lr': 1e-06, 'lr_warmup_steps_ratio': 0.0, 'total_training_steps': 200, 'weight_decay': 0.1, 'lr_warmup_steps': 10, '_target_': 'verl.workers.config.FSDPOptimizerConfig', 'min_lr_ratio': 0.0, 'num_cycles': 0.5, 'warmup_style': 'constant'}, 'use_fused_kernels': False, 'grad_clip': 1.0, 'ulysses_sequence_parallel_size': 2, 'entropy_from_logits_with_chunking': True, 'entropy_checkpointing': False, 'fsdp_config': {'_target_': 'verl.workers.config.FSDPEngineConfig', 'wrap_policy': {'min_num_params': 0}, 'param_offload': True, 'optimizer_offload': False, 'offload_policy': False, 'reshard_after_forward': True, 'fsdp_size': 32, 'forward_prefetch': False, 'model_dtype': 'bf16'}, 'use_remove_padding': True}, 'ref': {'strategy': 'fsdp2', 'use_torch_compile': True, 'log_prob_micro_batch_size': None, 'log_prob_micro_batch_size_per_gpu': None, 'log_prob_use_dynamic_bsz': True, 'log_prob_max_token_len_per_gpu': 12288, 'model': None, 'fsdp_config': {'_target_': 'verl.workers.config.FSDPEngineConfig', 'wrap_policy': {'min_num_params': 0}, 'param_offload': True, 'reshard_after_forward': True, 'forward_prefetch': False}, 'ulysses_sequence_parallel_size': 2, 'entropy_from_logits_with_chunking': False, 'entropy_checkpointing': False}, 'rollout': {'name': 'vllm', 'mode': 'sync', 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0, 'prompt_length': 2048, 'response_length': 4096, 'dtype': 'bfloat16', 'gpu_memory_utilization': 0.5, 'ignore_eos': False, 'enforce_eager': False, 'cudagraph_capture_sizes': None, 'free_cache_engine': True, 'tensor_model_parallel_size': 2, 'max_num_batched_tokens': 6144, 'max_model_len': None, 'max_num_seqs': 1024, 'log_prob_micro_batch_size': None, 'log_prob_micro_batch_size_per_gpu': None, 'log_prob_use_dynamic_bsz': True, 'log_prob_max_token_len_per_gpu': 12288, 'disable_log_stats': True, 'do_sample': True, 'n': 16, 'multi_stage_wake_up': False, 'engine_kwargs': {'vllm': {'swap_space': None, 'disable_mm_preprocessor_cache': False}, 'sglang': {'attention_backend': None}}, 'val_kwargs': {'top_k': 50, 'top_p': 0.7, 'temperature': 1.0, 'n': 1, 'do_sample': True}, 'multi_turn': {'enable': False, 'max_assistant_turns': None, 'tool_config_path': None, 'max_user_turns': None, 'max_parallel_calls': 1, 'max_tool_response_length': 256, 'tool_response_truncate_side': 'middle', 'interaction_config_path': None, 'use_inference_chat_template': False, 'tokenization_sanity_check_mode': 'strict', 'format': 'hermes'}, 'calculate_log_probs': False, 'agent': {'num_workers': 8, 'agent_loop_config_path': None, 'custom_async_server': {'path': None, 'name': None}}, 'update_weights_bucket_megabytes': 512, 'trace': {'backend': None, 'token2text': False}, 'skip_rollout': False, 'skip_dump_dir': '/tmp/rollout_dump', 'enable_chunked_prefill': True, 'load_format': 'dummy_dtensor', 'layered_summon': False}, 'hybrid_engine': True, 'nccl_timeout': 600, 'model': {'path': '/root/autodl-tmp/Qwen/Qwen2.5-3B-Instruct', 'custom_chat_template': None, 'use_shm': False, 'external_lib': None, 'override_config': {'max_position_embeddings': 32768}, 'enable_gradient_checkpointing': True, 'enable_activation_offload': False, 'use_remove_padding': True, 'lora_rank': 8, 'lora_alpha': 16, 'target_modules': 'all-linear', 'exclude_modules': None, 'use_liger': False, 'use_fused_kernels': False, 'fused_kernel_options': {'impl_backend': 'torch'}, 'trust_remote_code': False}, 'profiler': {'_target_': 'verl.utils.profiler.ProfilerConfig', 'discrete': False, 'all_ranks': False, 'ranks': []}}, 'trainer': {'npu_profile': {'options': {'save_path': './profiler_data', 'roles': ['all'], 'level': 'level1', 'with_memory': False, 'record_shapes': False, 'with_npu': True, 'with_cpu': True, 'with_module': False, 'with_stack': False, 'analysis': True}}, 'balance_batch': True, 'total_epochs': 10, 'total_training_steps': 200, 'profile_steps': None, 'profile_continuous_steps': False, 'controller_nsight_options': {'trace': 'cuda,nvtx,cublas,ucx', 'cuda-memory-usage': 'true', 'cuda-graph-trace': 'graph'}, 'worker_nsight_options': {'trace': 'cuda,nvtx,cublas,ucx', 'cuda-memory-usage': 'true', 'cuda-graph-trace': 'graph', 'capture-range': 'cudaProfilerApi', 'capture-range-end': None, 'kill': 'none'}, 'project_name': 'DAPO', 'experiment_name': 'DAPO-Qwen2.5-3b-MATH', 'logger': ['console', 'wandb'], 'log_val_generations': 10, 'rollout_data_dir': None, 'validation_data_dir': None, 'nnodes': 1, 'n_gpus_per_node': 2, 'save_freq': 10000, 'esi_redundant_time': 0, 'resume_mode': 'auto', 'resume_from_path': None, 'val_before_train': True, 'val_only': False, 'test_freq': 50, 'critic_warmup': 0, 'default_hdfs_dir': None, 'del_local_ckpt_after_load': False, 'default_local_dir': '/root/autodl-tmp/outputs/dapo_sft', 'max_actor_ckpt_to_keep': None, 'max_critic_ckpt_to_keep': None, 'ray_wait_register_center_timeout': 300, 'device': 'cuda', 'use_legacy_worker_impl': 'auto'}, 'data': {'tokenizer': None, 'use_shm': True, 'train_files': '/root/verl_data/dapo-math-17k.parquet', 'val_files': '/root/verl_data/aime-2024.parquet', 'prompt_key': 'prompt', 'reward_fn_key': 'data_source', 'max_prompt_length': 2048, 'max_response_length': 4096, 'train_batch_size': 512, 'val_batch_size': None, 'return_raw_input_ids': False, 'return_raw_chat': False, 'return_full_prompt': False, 'shuffle': True, 'dataloader_num_workers': 8, 'validation_shuffle': True, 'filter_overlong_prompts': False, 'filter_overlong_prompts_workers': 1, 'truncation': 'left', 'image_key': 'images', 'video_key': 'videos', 'trust_remote_code': False, 'custom_cls': {'path': None, 'name': None}, 'return_multi_modal_inputs': True, 'sampler': {'class_path': None, 'class_name': None}, 'datagen': {'path': None, 'name': None}}, 'critic': {'_target_': 'verl.workers.config.FSDPCriticConfig', 'rollout_n': 16, 'strategy': 'fsdp', 'enable': None, 'optim': {'lr': 1e-05, 'lr_warmup_steps_ratio': 0.0, 'total_training_steps': 200, 'weight_decay': 0.01, 'lr_warmup_steps': -1, '_target_': 'verl.workers.config.FSDPOptimizerConfig', 'min_lr_ratio': None, 'warmup_style': 'constant'}, 'model': {'path': '~/models/deepseek-llm-7b-chat', 'tokenizer_path': '/root/autodl-tmp/Qwen/Qwen2.5-3B-Instruct', 'override_config': {}, 'external_lib': None, 'trust_remote_code': False, '_target_': 'verl.workers.config.FSDPCriticModelCfg', 'use_shm': False, 'enable_gradient_checkpointing': True, 'enable_activation_offload': False, 'use_remove_padding': False, 'fsdp_config': {'_target_': 'verl.workers.config.FSDPEngineConfig', 'param_offload': False, 'optimizer_offload': False, 'offload_policy': False, 'reshard_after_forward': True, 'wrap_policy': {'min_num_params': 0}, 'fsdp_size': -1, 'forward_prefetch': False}, 'lora_rank': 0, 'lora_alpha': 16, 'target_modules': 'all-linear'}, 'ppo_mini_batch_size': 32, 'ppo_micro_batch_size': None, 'ppo_micro_batch_size_per_gpu': None, 'use_dynamic_bsz': True, 'ppo_max_token_len_per_gpu': 32768, 'forward_max_token_len_per_gpu': 32768, 'ppo_epochs': 1, 'shuffle': False, 'cliprange_value': 0.5, 'loss_agg_mode': 'token-mean', 'checkpoint': {'_target_': 'verl.trainer.config.CheckpointConfig', 'save_contents': ['model', 'optimizer', 'extra'], 'load_contents': ['model', 'optimizer', 'extra'], 'async_save': False}, 'profiler': {'_target_': 'verl.utils.profiler.ProfilerConfig', 'discrete': False, 'all_ranks': False, 'ranks': []}, 'forward_micro_batch_size': None, 'forward_micro_batch_size_per_gpu': None, 'ulysses_sequence_parallel_size': 1, 'grad_clip': 1.0}, 'reward_model': {'enable': False, 'strategy': 'fsdp', 'model': {'input_tokenizer': '/root/autodl-tmp/Qwen/Qwen2.5-3B-Instruct', 'path': '~/models/FsfairX-LLaMA3-RM-v0.1', 'external_lib': None, 'trust_remote_code': False, 'use_shm': False, 'use_remove_padding': False, 'use_fused_kernels': False, 'fsdp_config': {'_target_': 'verl.workers.config.FSDPEngineConfig', 'wrap_policy': {'min_num_params': 0}, 'param_offload': False, 'reshard_after_forward': True, 'fsdp_size': -1, 'forward_prefetch': False}}, 'micro_batch_size': None, 'micro_batch_size_per_gpu': None, 'max_length': None, 'use_dynamic_bsz': True, 'forward_max_token_len_per_gpu': 32768, 'reward_manager': 'dapo', 'launch_reward_fn_async': False, 'sandbox_fusion': {'url': None, 'max_concurrent': 64, 'memory_limit_mb': 1024}, 'profiler': {'_target_': 'verl.utils.profiler.ProfilerConfig', 'discrete': False, 'all_ranks': False, 'ranks': []}, 'ulysses_sequence_parallel_size': 1, 'reward_kwargs': {'overlong_buffer_cfg': {'enable': True, 'len': 4096, 'penalty_factor': 1.0, 'log': False}, 'max_resp_len': 4096}}, 'custom_reward_function': {'path': None, 'name': 'compute_score'}, 'algorithm': {'_target_': 'verl.trainer.config.AlgoConfig', 'gamma': 1.0, 'lam': 1.0, 'adv_estimator': 'grpo', 'norm_adv_by_std_in_grpo': True, 'use_kl_in_reward': False, 'kl_penalty': 'kl', 'kl_ctrl': {'_target_': 'verl.trainer.config.KLControlConfig', 'type': 'fixed', 'kl_coef': 0.0, 'horizon': 10000, 'target_kl': 0.1}, 'use_pf_ppo': False, 'pf_ppo': {'reweight_method': 'pow', 'weight_pow': 2.0}}, 'ray_init': {'num_cpus': None, 'timeline_json_file': None}, '_wandb': {}}
+2025-08-28 16:40:38,530 INFO    MainThread:9385 [wandb_init.py:init():871] starting backend
+2025-08-28 16:40:38,743 INFO    MainThread:9385 [wandb_init.py:init():874] sending inform_init request
+2025-08-28 16:40:38,747 INFO    MainThread:9385 [wandb_init.py:init():882] backend started and connected
+2025-08-28 16:40:38,756 INFO    MainThread:9385 [wandb_init.py:init():953] updated telemetry
+2025-08-28 16:40:38,763 INFO    MainThread:9385 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-08-28 16:41:09,891 INFO    Thread-8 (wrapped_target):9385 [retry.py:__call__():173] [no run ID] Retry attempt failed:
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connection.py", line 212, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7ef0eecad520>, 'Connection to api.wandb.ai timed out. (connect timeout=20)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7ef0eecad520>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7ef0eecad520>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))

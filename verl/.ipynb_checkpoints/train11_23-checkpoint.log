@@ -1,0 +1,438 @@
+2025-11-23 11:22:01,898	WARNING utils.py:426 -- Detecting docker specified CPUs. In previous versions of Ray, CPU detection in containers was incorrect. Please ensure that Ray has enough CPUs allocated. As a temporary workaround to revert to the prior behavior, set `RAY_USE_MULTIPROCESSING_CPU_COUNT=1` as an env var before starting Ray. Set the env var: `RAY_DISABLE_DOCKER_CPU_WARNING=1` to mute this warning.
+2025-11-23 11:22:03,053	INFO worker.py:1927 -- Started a local Ray instance.
+[36m(TaskRunner pid=8511)[0m TaskRunner hostname: autodl-container-304c4b8481-55d26d85, PID: 8511
+[36m(TaskRunner pid=8511)[0m {'actor_rollout_ref': {'actor': {'_target_': 'verl.workers.config.FSDPActorConfig',
+[36m(TaskRunner pid=8511)[0m                                  'checkpoint': {'_target_': 'verl.trainer.config.CheckpointConfig',
+[36m(TaskRunner pid=8511)[0m                                                 'async_save': False,
+[36m(TaskRunner pid=8511)[0m                                                 'load_contents': ['model',
+[36m(TaskRunner pid=8511)[0m                                                                   'optimizer',
+[36m(TaskRunner pid=8511)[0m                                                                   'extra'],
+[36m(TaskRunner pid=8511)[0m                                                 'save_contents': ['model',
+[36m(TaskRunner pid=8511)[0m                                                                   'optimizer',
+[36m(TaskRunner pid=8511)[0m                                                                   'extra']},
+[36m(TaskRunner pid=8511)[0m                                  'clip_ratio': 0.2,
+[36m(TaskRunner pid=8511)[0m                                  'clip_ratio_c': 10.0,
+[36m(TaskRunner pid=8511)[0m                                  'clip_ratio_high': 0.28,
+[36m(TaskRunner pid=8511)[0m                                  'clip_ratio_low': 0.2,
+[36m(TaskRunner pid=8511)[0m                                  'entropy_checkpointing': False,
+[36m(TaskRunner pid=8511)[0m                                  'entropy_coeff': 0,
+[36m(TaskRunner pid=8511)[0m                                  'entropy_from_logits_with_chunking': True,
+[36m(TaskRunner pid=8511)[0m                                  'fsdp_config': {'_target_': 'verl.workers.config.FSDPEngineConfig',
+[36m(TaskRunner pid=8511)[0m                                                  'forward_prefetch': False,
+[36m(TaskRunner pid=8511)[0m                                                  'fsdp_size': -1,
+[36m(TaskRunner pid=8511)[0m                                                  'offload_policy': False,
+[36m(TaskRunner pid=8511)[0m                                                  'optimizer_offload': False,
+[36m(TaskRunner pid=8511)[0m                                                  'param_offload': False,
+[36m(TaskRunner pid=8511)[0m                                                  'reshard_after_forward': True,
+[36m(TaskRunner pid=8511)[0m                                                  'wrap_policy': {'min_num_params': 0}},
+[36m(TaskRunner pid=8511)[0m                                  'grad_clip': 1.0,
+[36m(TaskRunner pid=8511)[0m                                  'kl_loss_coef': 0.0,
+[36m(TaskRunner pid=8511)[0m                                  'kl_loss_type': 'low_var_kl',
+[36m(TaskRunner pid=8511)[0m                                  'loss_agg_mode': 'token-mean',
+[36m(TaskRunner pid=8511)[0m                                  'optim': {'_target_': 'verl.workers.config.FSDPOptimizerConfig',
+[36m(TaskRunner pid=8511)[0m                                            'lr': 1e-06,
+[36m(TaskRunner pid=8511)[0m                                            'lr_warmup_steps': 10,
+[36m(TaskRunner pid=8511)[0m                                            'lr_warmup_steps_ratio': 0.0,
+[36m(TaskRunner pid=8511)[0m                                            'min_lr_ratio': 0.0,
+[36m(TaskRunner pid=8511)[0m                                            'num_cycles': 0.5,
+[36m(TaskRunner pid=8511)[0m                                            'total_training_steps': -1,
+[36m(TaskRunner pid=8511)[0m                                            'warmup_style': 'constant',
+[36m(TaskRunner pid=8511)[0m                                            'weight_decay': 0.1},
+[36m(TaskRunner pid=8511)[0m                                  'policy_loss': {'_target_': 'verl.workers.config.PolicyLossConfig',
+[36m(TaskRunner pid=8511)[0m                                                  'clip_cov_lb': 1.0,
+[36m(TaskRunner pid=8511)[0m                                                  'clip_cov_ratio': 0.0002,
+[36m(TaskRunner pid=8511)[0m                                                  'clip_cov_ub': 5.0,
+[36m(TaskRunner pid=8511)[0m                                                  'kl_cov_ratio': 0.0002,
+[36m(TaskRunner pid=8511)[0m                                                  'loss_mode': 'vanilla',
+[36m(TaskRunner pid=8511)[0m                                                  'ppo_kl_coef': 0.1},
+[36m(TaskRunner pid=8511)[0m                                  'ppo_epochs': 1,
+[36m(TaskRunner pid=8511)[0m                                  'ppo_max_token_len_per_gpu': 8192,
+[36m(TaskRunner pid=8511)[0m                                  'ppo_micro_batch_size': None,
+[36m(TaskRunner pid=8511)[0m                                  'ppo_micro_batch_size_per_gpu': None,
+[36m(TaskRunner pid=8511)[0m                                  'ppo_mini_batch_size': 16,
+[36m(TaskRunner pid=8511)[0m                                  'shuffle': False,
+[36m(TaskRunner pid=8511)[0m                                  'strategy': 'fsdp2',
+[36m(TaskRunner pid=8511)[0m                                  'token_weighted': False,
+[36m(TaskRunner pid=8511)[0m                                  'token_weighted_temperature': 0.0,
+[36m(TaskRunner pid=8511)[0m                                  'ulysses_sequence_parallel_size': 1,
+[36m(TaskRunner pid=8511)[0m                                  'use_dynamic_bsz': True,
+[36m(TaskRunner pid=8511)[0m                                  'use_fused_kernels': False,
+[36m(TaskRunner pid=8511)[0m                                  'use_kl_loss': False,
+[36m(TaskRunner pid=8511)[0m                                  'use_remove_padding': True,
+[36m(TaskRunner pid=8511)[0m                                  'use_torch_compile': True},
+[36m(TaskRunner pid=8511)[0m                        'hybrid_engine': True,
+[36m(TaskRunner pid=8511)[0m                        'model': {'custom_chat_template': None,
+[36m(TaskRunner pid=8511)[0m                                  'enable_activation_offload': False,
+[36m(TaskRunner pid=8511)[0m                                  'enable_gradient_checkpointing': True,
+[36m(TaskRunner pid=8511)[0m                                  'exclude_modules': None,
+[36m(TaskRunner pid=8511)[0m                                  'external_lib': None,
+[36m(TaskRunner pid=8511)[0m                                  'fused_kernel_options': {'impl_backend': 'torch'},
+[36m(TaskRunner pid=8511)[0m                                  'lora_alpha': 128,
+[36m(TaskRunner pid=8511)[0m                                  'lora_rank': 64,
+[36m(TaskRunner pid=8511)[0m                                  'override_config': {'max_position_embeddings': 32768},
+[36m(TaskRunner pid=8511)[0m                                  'path': '/root/autodl-tmp/Qwen/merged_sft_10_25_Qwen2.5 '
+[36m(TaskRunner pid=8511)[0m                                          '3B',
+[36m(TaskRunner pid=8511)[0m                                  'target_modules': 'all-linear',
+[36m(TaskRunner pid=8511)[0m                                  'trust_remote_code': False,
+[36m(TaskRunner pid=8511)[0m                                  'use_fused_kernels': False,
+[36m(TaskRunner pid=8511)[0m                                  'use_liger': False,
+[36m(TaskRunner pid=8511)[0m                                  'use_remove_padding': True,
+[36m(TaskRunner pid=8511)[0m                                  'use_shm': False},
+[36m(TaskRunner pid=8511)[0m                        'nccl_timeout': 600,
+[36m(TaskRunner pid=8511)[0m                        'profiler': {'_target_': 'verl.utils.profiler.ProfilerConfig',
+[36m(TaskRunner pid=8511)[0m                                     'all_ranks': False,
+[36m(TaskRunner pid=8511)[0m                                     'discrete': False,
+[36m(TaskRunner pid=8511)[0m                                     'ranks': []},
+[36m(TaskRunner pid=8511)[0m                        'ref': {'entropy_checkpointing': False,
+[36m(TaskRunner pid=8511)[0m                                'entropy_from_logits_with_chunking': False,
+[36m(TaskRunner pid=8511)[0m                                'fsdp_config': {'_target_': 'verl.workers.config.FSDPEngineConfig',
+[36m(TaskRunner pid=8511)[0m                                                'forward_prefetch': False,
+[36m(TaskRunner pid=8511)[0m                                                'param_offload': False,
+[36m(TaskRunner pid=8511)[0m                                                'reshard_after_forward': True,
+[36m(TaskRunner pid=8511)[0m                                                'wrap_policy': {'min_num_params': 0}},
+[36m(TaskRunner pid=8511)[0m                                'log_prob_max_token_len_per_gpu': 16384,
+[36m(TaskRunner pid=8511)[0m                                'log_prob_micro_batch_size': None,
+[36m(TaskRunner pid=8511)[0m                                'log_prob_micro_batch_size_per_gpu': None,
+[36m(TaskRunner pid=8511)[0m                                'log_prob_use_dynamic_bsz': True,
+[36m(TaskRunner pid=8511)[0m                                'model': None,
+[36m(TaskRunner pid=8511)[0m                                'strategy': 'fsdp2',
+[36m(TaskRunner pid=8511)[0m                                'ulysses_sequence_parallel_size': 1,
+[36m(TaskRunner pid=8511)[0m                                'use_torch_compile': True},
+[36m(TaskRunner pid=8511)[0m                        'rollout': {'agent': {'agent_loop_config_path': None,
+[36m(TaskRunner pid=8511)[0m                                              'custom_async_server': {'name': None,
+[36m(TaskRunner pid=8511)[0m                                                                      'path': None},
+[36m(TaskRunner pid=8511)[0m                                              'num_workers': 8},
+[36m(TaskRunner pid=8511)[0m                                    'calculate_log_probs': False,
+[36m(TaskRunner pid=8511)[0m                                    'cudagraph_capture_sizes': None,
+[36m(TaskRunner pid=8511)[0m                                    'disable_log_stats': True,
+[36m(TaskRunner pid=8511)[0m                                    'do_sample': True,
+[36m(TaskRunner pid=8511)[0m                                    'dtype': 'bfloat16',
+[36m(TaskRunner pid=8511)[0m                                    'enable_chunked_prefill': True,
+[36m(TaskRunner pid=8511)[0m                                    'enforce_eager': False,
+[36m(TaskRunner pid=8511)[0m                                    'engine_kwargs': {'sglang': {'attention_backend': None},
+[36m(TaskRunner pid=8511)[0m                                                      'vllm': {'disable_mm_preprocessor_cache': False,
+[36m(TaskRunner pid=8511)[0m                                                               'swap_space': None}},
+[36m(TaskRunner pid=8511)[0m                                    'free_cache_engine': True,
+[36m(TaskRunner pid=8511)[0m                                    'gpu_memory_utilization': 0.7,
+[36m(TaskRunner pid=8511)[0m                                    'ignore_eos': False,
+[36m(TaskRunner pid=8511)[0m                                    'layered_summon': False,
+[36m(TaskRunner pid=8511)[0m                                    'load_format': 'dummy_dtensor',
+[36m(TaskRunner pid=8511)[0m                                    'log_prob_max_token_len_per_gpu': 16384,
+[36m(TaskRunner pid=8511)[0m                                    'log_prob_micro_batch_size': None,
+[36m(TaskRunner pid=8511)[0m                                    'log_prob_micro_batch_size_per_gpu': None,
+[36m(TaskRunner pid=8511)[0m                                    'log_prob_use_dynamic_bsz': True,
+[36m(TaskRunner pid=8511)[0m                                    'max_model_len': None,
+[36m(TaskRunner pid=8511)[0m                                    'max_num_batched_tokens': 8192,
+[36m(TaskRunner pid=8511)[0m                                    'max_num_seqs': 1024,
+[36m(TaskRunner pid=8511)[0m                                    'mode': 'sync',
+[36m(TaskRunner pid=8511)[0m                                    'multi_stage_wake_up': False,
+[36m(TaskRunner pid=8511)[0m                                    'multi_turn': {'enable': False,
+[36m(TaskRunner pid=8511)[0m                                                   'format': 'hermes',
+[36m(TaskRunner pid=8511)[0m                                                   'interaction_config_path': None,
+[36m(TaskRunner pid=8511)[0m                                                   'max_assistant_turns': None,
+[36m(TaskRunner pid=8511)[0m                                                   'max_parallel_calls': 1,
+[36m(TaskRunner pid=8511)[0m                                                   'max_tool_response_length': 256,
+[36m(TaskRunner pid=8511)[0m                                                   'max_user_turns': None,
+[36m(TaskRunner pid=8511)[0m                                                   'tokenization_sanity_check_mode': 'strict',
+[36m(TaskRunner pid=8511)[0m                                                   'tool_config_path': None,
+[36m(TaskRunner pid=8511)[0m                                                   'tool_response_truncate_side': 'middle',
+[36m(TaskRunner pid=8511)[0m                                                   'use_inference_chat_template': False},
+[36m(TaskRunner pid=8511)[0m                                    'n': 6,
+[36m(TaskRunner pid=8511)[0m                                    'name': 'vllm',
+[36m(TaskRunner pid=8511)[0m                                    'prompt_length': 2048,
+[36m(TaskRunner pid=8511)[0m                                    'response_length': 6144,
+[36m(TaskRunner pid=8511)[0m                                    'skip_dump_dir': '/tmp/rollout_dump',
+[36m(TaskRunner pid=8511)[0m                                    'skip_rollout': False,
+[36m(TaskRunner pid=8511)[0m                                    'temperature': 1.0,
+[36m(TaskRunner pid=8511)[0m                                    'tensor_model_parallel_size': 1,
+[36m(TaskRunner pid=8511)[0m                                    'top_k': 50,
+[36m(TaskRunner pid=8511)[0m                                    'top_p': 1.0,
+[36m(TaskRunner pid=8511)[0m                                    'trace': {'backend': None,
+[36m(TaskRunner pid=8511)[0m                                              'token2text': False},
+[36m(TaskRunner pid=8511)[0m                                    'update_weights_bucket_megabytes': 512,
+[36m(TaskRunner pid=8511)[0m                                    'val_kwargs': {'do_sample': True,
+[36m(TaskRunner pid=8511)[0m                                                   'n': 1,
+[36m(TaskRunner pid=8511)[0m                                                   'temperature': 1.0,
+[36m(TaskRunner pid=8511)[0m                                                   'top_k': 50,
+[36m(TaskRunner pid=8511)[0m                                                   'top_p': 0.7}}},
+[36m(TaskRunner pid=8511)[0m  'algorithm': {'_target_': 'verl.trainer.config.AlgoConfig',
+[36m(TaskRunner pid=8511)[0m                'adv_estimator': 'grpo',
+[36m(TaskRunner pid=8511)[0m                'filter_groups': {'_target_': 'verl.trainer.config.FilterGroupsConfig',
+[36m(TaskRunner pid=8511)[0m                                  'enable': True,
+[36m(TaskRunner pid=8511)[0m                                  'max_num_gen_batches': 10,
+[36m(TaskRunner pid=8511)[0m                                  'metric': 'acc'},
+[36m(TaskRunner pid=8511)[0m                'gamma': 1.0,
+[36m(TaskRunner pid=8511)[0m                'kl_ctrl': {'_target_': 'verl.trainer.config.KLControlConfig',
+[36m(TaskRunner pid=8511)[0m                            'horizon': 10000,
+[36m(TaskRunner pid=8511)[0m                            'kl_coef': 0.0,
+[36m(TaskRunner pid=8511)[0m                            'target_kl': 0.1,
+[36m(TaskRunner pid=8511)[0m                            'type': 'fixed'},
+[36m(TaskRunner pid=8511)[0m                'kl_penalty': 'kl',
+[36m(TaskRunner pid=8511)[0m                'lam': 1.0,
+[36m(TaskRunner pid=8511)[0m                'norm_adv_by_std_in_grpo': True,
+[36m(TaskRunner pid=8511)[0m                'pf_ppo': {'reweight_method': 'pow', 'weight_pow': 2.0},
+[36m(TaskRunner pid=8511)[0m                'use_kl_in_reward': False,
+[36m(TaskRunner pid=8511)[0m                'use_pf_ppo': False},
+[36m(TaskRunner pid=8511)[0m  'critic': {'_target_': 'verl.workers.config.FSDPCriticConfig',
+[36m(TaskRunner pid=8511)[0m             'checkpoint': {'_target_': 'verl.trainer.config.CheckpointConfig',
+[36m(TaskRunner pid=8511)[0m                            'async_save': False,
+[36m(TaskRunner pid=8511)[0m                            'load_contents': ['model', 'optimizer', 'extra'],
+[36m(TaskRunner pid=8511)[0m                            'save_contents': ['model', 'optimizer', 'extra']},
+[36m(TaskRunner pid=8511)[0m             'cliprange_value': 0.5,
+[36m(TaskRunner pid=8511)[0m             'enable': None,
+[36m(TaskRunner pid=8511)[0m             'forward_max_token_len_per_gpu': 32768,
+[36m(TaskRunner pid=8511)[0m             'forward_micro_batch_size': None,
+[36m(TaskRunner pid=8511)[0m             'forward_micro_batch_size_per_gpu': None,
+[36m(TaskRunner pid=8511)[0m             'grad_clip': 1.0,
+[36m(TaskRunner pid=8511)[0m             'loss_agg_mode': 'token-mean',
+[36m(TaskRunner pid=8511)[0m             'model': {'_target_': 'verl.workers.config.FSDPCriticModelCfg',
+[36m(TaskRunner pid=8511)[0m                       'enable_activation_offload': False,
+[36m(TaskRunner pid=8511)[0m                       'enable_gradient_checkpointing': True,
+[36m(TaskRunner pid=8511)[0m                       'external_lib': None,
+[36m(TaskRunner pid=8511)[0m                       'fsdp_config': {'_target_': 'verl.workers.config.FSDPEngineConfig',
+[36m(TaskRunner pid=8511)[0m                                       'forward_prefetch': False,
+[36m(TaskRunner pid=8511)[0m                                       'fsdp_size': -1,
+[36m(TaskRunner pid=8511)[0m                                       'offload_policy': False,
+[36m(TaskRunner pid=8511)[0m                                       'optimizer_offload': False,
+[36m(TaskRunner pid=8511)[0m                                       'param_offload': False,
+[36m(TaskRunner pid=8511)[0m                                       'reshard_after_forward': True,
+[36m(TaskRunner pid=8511)[0m                                       'wrap_policy': {'min_num_params': 0}},
+[36m(TaskRunner pid=8511)[0m                       'lora_alpha': 16,
+[36m(TaskRunner pid=8511)[0m                       'lora_rank': 0,
+[36m(TaskRunner pid=8511)[0m                       'override_config': {},
+[36m(TaskRunner pid=8511)[0m                       'path': '~/models/deepseek-llm-7b-chat',
+[36m(TaskRunner pid=8511)[0m                       'target_modules': 'all-linear',
+[36m(TaskRunner pid=8511)[0m                       'tokenizer_path': '/root/autodl-tmp/Qwen/merged_sft_10_25_Qwen2.5 '
+[36m(TaskRunner pid=8511)[0m                                         '3B',
+[36m(TaskRunner pid=8511)[0m                       'trust_remote_code': False,
+[36m(TaskRunner pid=8511)[0m                       'use_remove_padding': False,
+[36m(TaskRunner pid=8511)[0m                       'use_shm': False},
+[36m(TaskRunner pid=8511)[0m             'optim': {'_target_': 'verl.workers.config.FSDPOptimizerConfig',
+[36m(TaskRunner pid=8511)[0m                       'lr': 1e-05,
+[36m(TaskRunner pid=8511)[0m                       'lr_warmup_steps': -1,
+[36m(TaskRunner pid=8511)[0m                       'lr_warmup_steps_ratio': 0.0,
+[36m(TaskRunner pid=8511)[0m                       'min_lr_ratio': None,
+[36m(TaskRunner pid=8511)[0m                       'total_training_steps': -1,
+[36m(TaskRunner pid=8511)[0m                       'warmup_style': 'constant',
+[36m(TaskRunner pid=8511)[0m                       'weight_decay': 0.01},
+[36m(TaskRunner pid=8511)[0m             'ppo_epochs': 1,
+[36m(TaskRunner pid=8511)[0m             'ppo_max_token_len_per_gpu': 32768,
+[36m(TaskRunner pid=8511)[0m             'ppo_micro_batch_size': None,
+[36m(TaskRunner pid=8511)[0m             'ppo_micro_batch_size_per_gpu': None,
+[36m(TaskRunner pid=8511)[0m             'ppo_mini_batch_size': 16,
+[36m(TaskRunner pid=8511)[0m             'profiler': {'_target_': 'verl.utils.profiler.ProfilerConfig',
+[36m(TaskRunner pid=8511)[0m                          'all_ranks': False,
+[36m(TaskRunner pid=8511)[0m                          'discrete': False,
+[36m(TaskRunner pid=8511)[0m                          'ranks': []},
+[36m(TaskRunner pid=8511)[0m             'rollout_n': 6,
+[36m(TaskRunner pid=8511)[0m             'shuffle': False,
+[36m(TaskRunner pid=8511)[0m             'strategy': 'fsdp',
+[36m(TaskRunner pid=8511)[0m             'ulysses_sequence_parallel_size': 1,
+[36m(TaskRunner pid=8511)[0m             'use_dynamic_bsz': True},
+[36m(TaskRunner pid=8511)[0m  'custom_reward_function': {'name': 'compute_score',
+[36m(TaskRunner pid=8511)[0m                             'path': '/root/verl/custom_reward/custom_math_reward.py'},
+[36m(TaskRunner pid=8511)[0m  'data': {'custom_cls': {'name': None, 'path': None},
+[36m(TaskRunner pid=8511)[0m           'datagen': {'name': None, 'path': None},
+[36m(TaskRunner pid=8511)[0m           'dataloader_num_workers': 8,
+[36m(TaskRunner pid=8511)[0m           'filter_overlong_prompts': False,
+[36m(TaskRunner pid=8511)[0m           'filter_overlong_prompts_workers': 1,
+[36m(TaskRunner pid=8511)[0m           'gen_batch_size': 36,
+[36m(TaskRunner pid=8511)[0m           'image_key': 'images',
+[36m(TaskRunner pid=8511)[0m           'max_prompt_length': 2048,
+[36m(TaskRunner pid=8511)[0m           'max_response_length': 6144,
+[36m(TaskRunner pid=8511)[0m           'prompt_key': 'prompt',
+[36m(TaskRunner pid=8511)[0m           'return_full_prompt': False,
+[36m(TaskRunner pid=8511)[0m           'return_multi_modal_inputs': True,
+[36m(TaskRunner pid=8511)[0m           'return_raw_chat': False,
+[36m(TaskRunner pid=8511)[0m           'return_raw_input_ids': False,
+[36m(TaskRunner pid=8511)[0m           'reward_fn_key': 'data_source',
+[36m(TaskRunner pid=8511)[0m           'sampler': {'class_name': None, 'class_path': None},
+[36m(TaskRunner pid=8511)[0m           'shuffle': True,
+[36m(TaskRunner pid=8511)[0m           'tokenizer': None,
+[36m(TaskRunner pid=8511)[0m           'train_batch_size': 32,
+[36m(TaskRunner pid=8511)[0m           'train_files': '/root/augumented_lunwen/data_related/safety_aware_train_rl_data.parquet',
+[36m(TaskRunner pid=8511)[0m           'truncation': 'left',
+[36m(TaskRunner pid=8511)[0m           'trust_remote_code': False,
+[36m(TaskRunner pid=8511)[0m           'use_custom': True,
+[36m(TaskRunner pid=8511)[0m           'use_shm': True,
+[36m(TaskRunner pid=8511)[0m           'val_batch_size': None,
+[36m(TaskRunner pid=8511)[0m           'val_files': '/root/augumented_lunwen/data_related/safety_aware_val_rl_data.parquet',
+[36m(TaskRunner pid=8511)[0m           'validation_shuffle': True,
+[36m(TaskRunner pid=8511)[0m           'video_key': 'videos'},
+[36m(TaskRunner pid=8511)[0m  'ray_init': {'num_cpus': None, 'timeline_json_file': None},
+[36m(TaskRunner pid=8511)[0m  'reward_model': {'enable': False,
+[36m(TaskRunner pid=8511)[0m                   'forward_max_token_len_per_gpu': 32768,
+[36m(TaskRunner pid=8511)[0m                   'launch_reward_fn_async': False,
+[36m(TaskRunner pid=8511)[0m                   'max_length': None,
+[36m(TaskRunner pid=8511)[0m                   'micro_batch_size': None,
+[36m(TaskRunner pid=8511)[0m                   'micro_batch_size_per_gpu': None,
+[36m(TaskRunner pid=8511)[0m                   'model': {'external_lib': None,
+[36m(TaskRunner pid=8511)[0m                             'fsdp_config': {'_target_': 'verl.workers.config.FSDPEngineConfig',
+[36m(TaskRunner pid=8511)[0m /root/verl/recipe/dapo/main_dapo.py:161: UserWarning: Disabled critic as algorithm.adv_estimator != gae. If it is not intended, please set critic.enable=True
+[36m(TaskRunner pid=8511)[0m   trainer = CustomRayTrainer(
+[36m(TaskRunner pid=8511)[0m                                             'forward_prefetch': False,
+[36m(TaskRunner pid=8511)[0m                                             'fsdp_size': -1,
+[36m(TaskRunner pid=8511)[0m                                             'param_offload': False,
+[36m(TaskRunner pid=8511)[0m                                             'reshard_after_forward': True,
+[36m(TaskRunner pid=8511)[0m                                             'wrap_policy': {'min_num_params': 0}},
+[36m(TaskRunner pid=8511)[0m                             'input_tokenizer': '/root/autodl-tmp/Qwen/merged_sft_10_25_Qwen2.5 '
+[36m(TaskRunner pid=8511)[0m                                                '3B',
+[36m(TaskRunner pid=8511)[0m                             'path': '~/models/FsfairX-LLaMA3-RM-v0.1',
+[36m(TaskRunner pid=8511)[0m                             'trust_remote_code': False,
+[36m(TaskRunner pid=8511)[0m                             'use_fused_kernels': False,
+[36m(TaskRunner pid=8511)[0m                             'use_remove_padding': False,
+[36m(TaskRunner pid=8511)[0m                             'use_shm': False},
+[36m(TaskRunner pid=8511)[0m                   'overlong_buffer': {'enable': False,
+[36m(TaskRunner pid=8511)[0m                                       'len': 0,
+[36m(TaskRunner pid=8511)[0m                                       'log': False,
+[36m(TaskRunner pid=8511)[0m                                       'penalty_factor': 0.0},
+[36m(TaskRunner pid=8511)[0m                   'profiler': {'_target_': 'verl.utils.profiler.ProfilerConfig',
+[36m(TaskRunner pid=8511)[0m                                'all_ranks': False,
+[36m(TaskRunner pid=8511)[0m                                'discrete': False,
+[36m(TaskRunner pid=8511)[0m                                'ranks': []},
+[36m(TaskRunner pid=8511)[0m                   'reward_kwargs': {'max_resp_len': 6144,
+[36m(TaskRunner pid=8511)[0m                                     'overlong_buffer_cfg': {'enable': True,
+[36m(TaskRunner pid=8511)[0m                                                             'len': 4096,
+[36m(TaskRunner pid=8511)[0m                                                             'log': False,
+[36m(TaskRunner pid=8511)[0m                                                             'penalty_factor': 1.0}},
+[36m(TaskRunner pid=8511)[0m                   'reward_manager': 'custom',
+[36m(TaskRunner pid=8511)[0m                   'sandbox_fusion': {'max_concurrent': 64,
+[36m(TaskRunner pid=8511)[0m                                      'memory_limit_mb': 1024,
+[36m(TaskRunner pid=8511)[0m                                      'url': None},
+[36m(TaskRunner pid=8511)[0m                   'strategy': 'fsdp',
+[36m(TaskRunner pid=8511)[0m                   'ulysses_sequence_parallel_size': 1,
+[36m(TaskRunner pid=8511)[0m                   'use_dynamic_bsz': True},
+[36m(TaskRunner pid=8511)[0m  'trainer': {'balance_batch': True,
+[36m(TaskRunner pid=8511)[0m              'controller_nsight_options': {'cuda-graph-trace': 'graph',
+[36m(TaskRunner pid=8511)[0m                                            'cuda-memory-usage': 'true',
+[36m(TaskRunner pid=8511)[0m                                            'trace': 'cuda,nvtx,cublas,ucx'},
+[36m(TaskRunner pid=8511)[0m              'critic_warmup': 0,
+[36m(TaskRunner pid=8511)[0m              'default_hdfs_dir': None,
+[36m(TaskRunner pid=8511)[0m              'default_local_dir': '/root/autodl-tmp/outputs/batch_token_weighted_wo_token_weighted_dapo_custom_JBtest_11_23',
+[36m(TaskRunner pid=8511)[0m              'del_local_ckpt_after_load': False,
+[36m(TaskRunner pid=8511)[0m              'device': 'cuda',
+[36m(TaskRunner pid=8511)[0m              'esi_redundant_time': 0,
+[36m(TaskRunner pid=8511)[0m              'experiment_name': 'batch_token_weighted_wo_token_weighted_Qwen2.5-3b',
+[36m(TaskRunner pid=8511)[0m              'log_val_generations': 40,
+[36m(TaskRunner pid=8511)[0m              'logger': ['console', 'tensorboard'],
+[36m(TaskRunner pid=8511)[0m              'max_actor_ckpt_to_keep': None,
+[36m(TaskRunner pid=8511)[0m              'max_critic_ckpt_to_keep': None,
+[36m(TaskRunner pid=8511)[0m              'n_gpus_per_node': 1,
+[36m(TaskRunner pid=8511)[0m              'nnodes': 1,
+[36m(TaskRunner pid=8511)[0m              'npu_profile': {'options': {'analysis': True,
+[36m(TaskRunner pid=8511)[0m                                          'level': 'level1',
+[36m(TaskRunner pid=8511)[0m                                          'record_shapes': False,
+[36m(TaskRunner pid=8511)[0m                                          'roles': ['all'],
+[36m(TaskRunner pid=8511)[0m                                          'save_path': './profiler_data',
+[36m(TaskRunner pid=8511)[0m                                          'with_cpu': True,
+[36m(TaskRunner pid=8511)[0m                                          'with_memory': False,
+[36m(TaskRunner pid=8511)[0m                                          'with_module': False,
+[36m(TaskRunner pid=8511)[0m                                          'with_npu': True,
+[36m(TaskRunner pid=8511)[0m                                          'with_stack': False}},
+[36m(TaskRunner pid=8511)[0m              'profile_continuous_steps': False,
+[36m(TaskRunner pid=8511)[0m              'profile_steps': None,
+[36m(TaskRunner pid=8511)[0m              'project_name': 'DAPO_JBcustom',
+[36m(TaskRunner pid=8511)[0m              'ray_wait_register_center_timeout': 300,
+[36m(TaskRunner pid=8511)[0m              'resume_from_path': None,
+[36m(TaskRunner pid=8511)[0m              'resume_mode': 'auto',
+[36m(TaskRunner pid=8511)[0m              'rollout_data_dir': None,
+[36m(TaskRunner pid=8511)[0m              'save_freq': 400,
+[36m(TaskRunner pid=8511)[0m              'test_freq': 150,
+[36m(TaskRunner pid=8511)[0m              'total_epochs': 6,
+[36m(TaskRunner pid=8511)[0m              'total_training_steps': 600,
+[36m(TaskRunner pid=8511)[0m              'use_legacy_worker_impl': 'auto',
+[36m(TaskRunner pid=8511)[0m              'val_before_train': False,
+[36m(TaskRunner pid=8511)[0m              'val_only': False,
+[36m(TaskRunner pid=8511)[0m              'validation_data_dir': None,
+[36m(TaskRunner pid=8511)[0m              'worker_nsight_options': {'capture-range': 'cudaProfilerApi',
+[36m(TaskRunner pid=8511)[0m                                        'capture-range-end': None,
+[36m(TaskRunner pid=8511)[0m                                        'cuda-graph-trace': 'graph',
+[36m(TaskRunner pid=8511)[0m                                        'cuda-memory-usage': 'true',
+[36m(TaskRunner pid=8511)[0m                                        'kill': 'none',
+[36m(TaskRunner pid=8511)[0m                                        'trace': 'cuda,nvtx,cublas,ucx'}}}
+[36m(TaskRunner pid=8511)[0m using customized reward function 'compute_score' from '/root/verl/custom_reward/custom_math_reward.py'
+[36m(TaskRunner pid=8511)[0m using customized reward function 'compute_score' from '/root/verl/custom_reward/custom_math_reward.py'
+[36m(TaskRunner pid=8511)[0m [validate_config] All configuration checks passed successfully!
+[36m(TaskRunner pid=8511)[0m Using dataset class: CustomRLHFTextDataset
+[36m(TaskRunner pid=8511)[0m [WARNING]: The memory model path /dev/shm/verl-cache/842649370d3a8ab96b3603073c1d4a34/safety_aware_train_rl_data.parquet already exists. If it is not you want, please clear it and restart the task.
+[36m(TaskRunner pid=8511)[0m dataset len: 17114
+[36m(TaskRunner pid=8511)[0m Using dataset class: RLHFDataset
+[36m(TaskRunner pid=8511)[0m [WARNING]: The memory model path /dev/shm/verl-cache/68efdbb088564a5071de81a5f4331c74/safety_aware_val_rl_data.parquet already exists. If it is not you want, please clear it and restart the task.
+[36m(TaskRunner pid=8511)[0m dataset len: 1268
+[36m(TaskRunner pid=8511)[0m Size of train dataloader: 475, Size of val dataloader: 1
+[36m(TaskRunner pid=8511)[0m Total training steps: 600
+[36m(TaskRunner pid=8511)[0m DeprecationWarning: `ray.state.available_resources_per_node` is a private attribute and access will be removed in a future Ray version.
+[36m(TaskRunner pid=8511)[0m WARNING:2025-11-23 11:22:12,976:Waiting for register center actor nlvdOV_register_center to be ready. Elapsed time: 0 seconds out of 300 seconds.
+[36m(WorkerDict pid=8819)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[36m(WorkerDict pid=8819)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+[36m(WorkerDict pid=8819)[0m Loading checkpoint shards:   0%|                                                                                                                                | 0/3 [00:00<?, ?it/s]
+[36m(WorkerDict pid=8819)[0m Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 36.92it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:   0%|                                                                                                                             | 0/67 [00:00<?, ?it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:   1%|█▋                                                                                                                   | 1/67 [00:00<00:48,  1.36it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:   3%|███▍                                                                                                                 | 2/67 [00:01<00:47,  1.36it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:   4%|█████▏                                                                                                               | 3/67 [00:02<00:47,  1.36it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:   6%|██████▉                                                                                                              | 4/67 [00:02<00:47,  1.34it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:   7%|████████▋                                                                                                            | 5/67 [00:03<00:47,  1.31it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:   9%|██████████▍                                                                                                          | 6/67 [00:04<00:44,  1.37it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  10%|████████████▏                                                                                                        | 7/67 [00:05<00:41,  1.43it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  12%|█████████████▉                                                                                                       | 8/67 [00:05<00:40,  1.47it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  13%|███████████████▋                                                                                                     | 9/67 [00:06<00:38,  1.51it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  15%|█████████████████▎                                                                                                  | 10/67 [00:06<00:37,  1.54it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  16%|███████████████████                                                                                                 | 11/67 [00:07<00:36,  1.54it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  18%|████████████████████▊                                                                                               | 12/67 [00:08<00:35,  1.55it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  19%|██████████████████████▌                                                                                             | 13/67 [00:08<00:34,  1.57it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  21%|████████████████████████▏                                                                                           | 14/67 [00:09<00:33,  1.56it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  22%|█████████████████████████▉                                                                                          | 15/67 [00:10<00:33,  1.55it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  24%|███████████████████████████▋                                                                                        | 16/67 [00:10<00:32,  1.55it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  25%|█████████████████████████████▍                                                                                      | 17/67 [00:11<00:32,  1.54it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  27%|███████████████████████████████▏                                                                                    | 18/67 [00:12<00:31,  1.54it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  28%|████████████████████████████████▉                                                                                   | 19/67 [00:12<00:30,  1.55it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  30%|██████████████████████████████████▋                                                                                 | 20/67 [00:13<00:30,  1.56it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  31%|████████████████████████████████████▎                                                                               | 21/67 [00:13<00:29,  1.58it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  33%|██████████████████████████████████████                                                                              | 22/67 [00:14<00:28,  1.59it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  34%|███████████████████████████████████████▊                                                                            | 23/67 [00:15<00:27,  1.60it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  36%|█████████████████████████████████████████▌                                                                          | 24/67 [00:15<00:26,  1.61it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  37%|███████████████████████████████████████████▎                                                                        | 25/67 [00:16<00:25,  1.62it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  39%|█████████████████████████████████████████████                                                                       | 26/67 [00:17<00:25,  1.62it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  40%|██████████████████████████████████████████████▋                                                                     | 27/67 [00:17<00:24,  1.62it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  42%|████████████████████████████████████████████████▍                                                                   | 28/67 [00:18<00:24,  1.62it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  43%|██████████████████████████████████████████████████▏                                                                 | 29/67 [00:18<00:23,  1.62it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  45%|███████████████████████████████████████████████████▉                                                                | 30/67 [00:19<00:22,  1.61it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  46%|█████████████████████████████████████████████████████▋                                                              | 31/67 [00:20<00:22,  1.62it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  48%|███████████████████████████████████████████████████████▍                                                            | 32/67 [00:20<00:21,  1.61it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  49%|█████████████████████████████████████████████████████████▏                                                          | 33/67 [00:21<00:21,  1.60it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  51%|██████████████████████████████████████████████████████████▊                                                         | 34/67 [00:22<00:21,  1.57it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  52%|████████████████████████████████████████████████████████████▌                                                       | 35/67 [00:22<00:20,  1.58it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  54%|██████████████████████████████████████████████████████████████▎                                                     | 36/67 [00:23<00:18,  1.65it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  55%|████████████████████████████████████████████████████████████████                                                    | 37/67 [00:23<00:17,  1.71it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  57%|█████████████████████████████████████████████████████████████████▊                                                  | 38/67 [00:24<00:16,  1.75it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  58%|███████████████████████████████████████████████████████████████████▌                                                | 39/67 [00:24<00:15,  1.78it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  60%|█████████████████████████████████████████████████████████████████████▎                                              | 40/67 [00:25<00:14,  1.80it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  61%|██████████████████████████████████████████████████████████████████████▉                                             | 41/67 [00:25<00:14,  1.83it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  63%|████████████████████████████████████████████████████████████████████████▋                                           | 42/67 [00:26<00:13,  1.84it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  64%|██████████████████████████████████████████████████████████████████████████▍                                         | 43/67 [00:27<00:13,  1.84it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  66%|████████████████████████████████████████████████████████████████████████████▏                                       | 44/67 [00:27<00:12,  1.85it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  67%|█████████████████████████████████████████████████████████████████████████████▉                                      | 45/67 [00:28<00:11,  1.85it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  69%|███████████████████████████████████████████████████████████████████████████████▋                                    | 46/67 [00:28<00:11,  1.85it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  70%|█████████████████████████████████████████████████████████████████████████████████▎                                  | 47/67 [00:29<00:10,  1.84it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  72%|███████████████████████████████████████████████████████████████████████████████████                                 | 48/67 [00:29<00:10,  1.84it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  73%|████████████████████████████████████████████████████████████████████████████████████▊                               | 49/67 [00:30<00:09,  1.84it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  75%|██████████████████████████████████████████████████████████████████████████████████████▌                             | 50/67 [00:30<00:09,  1.81it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  76%|████████████████████████████████████████████████████████████████████████████████████████▎                           | 51/67 [00:31<00:08,  1.81it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  78%|██████████████████████████████████████████████████████████████████████████████████████████                          | 52/67 [00:31<00:08,  1.80it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  79%|███████████████████████████████████████████████████████████████████████████████████████████▊                        | 53/67 [00:32<00:07,  1.81it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  81%|█████████████████████████████████████████████████████████████████████████████████████████████▍                      | 54/67 [00:33<00:07,  1.80it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  82%|███████████████████████████████████████████████████████████████████████████████████████████████▏                    | 55/67 [00:33<00:06,  1.81it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  84%|████████████████████████████████████████████████████████████████████████████████████████████████▉                   | 56/67 [00:34<00:06,  1.80it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  85%|██████████████████████████████████████████████████████████████████████████████████████████████████▋                 | 57/67 [00:34<00:05,  1.78it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  87%|████████████████████████████████████████████████████████████████████████████████████████████████████▍               | 58/67 [00:35<00:05,  1.80it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████▏             | 59/67 [00:35<00:04,  1.79it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  90%|███████████████████████████████████████████████████████████████████████████████████████████████████████▉            | 60/67 [00:36<00:03,  1.78it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  91%|█████████████████████████████████████████████████████████████████████████████████████████████████████████▌          | 61/67 [00:36<00:03,  1.78it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  93%|███████████████████████████████████████████████████████████████████████████████████████████████████████████▎        | 62/67 [00:37<00:02,  1.78it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  94%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████       | 63/67 [00:38<00:02,  1.78it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  96%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████▊     | 64/67 [00:38<00:01,  1.77it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  97%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌   | 65/67 [00:39<00:01,  1.78it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes:  99%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎ | 66/67 [00:39<00:00,  1.79it/s]
+[36m(WorkerDict pid=8819)[0m Capturing CUDA graph shapes: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 67/67 [00:40<00:00,  1.77it/s]Capturing CUDA graph shapes: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 67/67 [00:40<00:00,  1.66it/s]
+[36m(TaskRunner pid=8511)[0m Training Progress:   0%|                                                                                                                                      | 0/600 [00:00<?, ?it/s]
