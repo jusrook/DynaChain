@@ -15,7 +15,8 @@ cd sft_stage
 sh run_sft.sh
 ```
 
-##运行 RL
+## 运行 RL
+
 执行以下命令启动 RL 训练：
 
 ```bash
