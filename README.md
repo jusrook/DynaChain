@@ -25,3 +25,6 @@ sh recipe/dapo/run_dapo_recipe.sh
 ```
 
 注意：请根据实际需求修改脚本内的数据路径、模型路径及超参数。
+
+奖励所用prompt路径：https://github.com/jusrook/DynaChain/blob/main/verl/custom_reward/custom_math_reward.py
+测试所用prompt路径：https://github.com/jusrook/Eval-JB/blob/main/eval_client.py
